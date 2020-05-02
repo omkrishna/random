@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		To Do List
+	</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="todolist.css">
+</head>
+<body>
+	<div id="content">
+	<div id="header">
+		<div id="header-text" style="color:white"> To-Do List </div>
+		<input type="text" id="text-input" placeholder="new task">
+	</div><br>
+	<div id="container">
+		
+		
+	</div>
+	</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.5.0.js"
+  integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc="
+  crossorigin="anonymous">
+</script>
+<script type="text/javascript">
+	
+	$('#container').on("click", ".text", function(){
+		$(this).toggleClass("strike")
+
+	})
+
+
+	$('#container').on("click", ".del", function(){
+		$(this).parent('.row').fadeOut()
+	})
+
+	$('#text-input').keypress(function(event){
+		if(event.which==13){
+			$('#container').append('<div class="row"><button class="del"> X </button><span class="text">'+ $(this).val() +'</span></div>');
+			$('#text-input').val('');
+		}
+	})
+
+	$( "#container" ).on( "mouseenter mouseleave", ".row",function( event ) {
+  $( this ).toggleClass( "active" );
+});
+</script>
+
+
+
+
+
+
+</body>
+</html>

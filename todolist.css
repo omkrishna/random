@@ -1,0 +1,70 @@
+body{
+	background:crimson;
+}
+
+#content{
+	width:300px;
+	margin:80px auto;
+	font-family: 'Raleway', sans-serif;
+	
+	padding:50px;
+	border-radius:10px;
+}
+
+#header{
+	height:60px;
+	}
+
+#header-text{
+	text-align:center;
+	color:white;
+	margin-bottom: 25px;
+	color:black;
+	font-weight: 800;
+	font-size: 40px;
+	
+}
+#text-input{
+	padding:5px;
+	font-size:20px;
+	width:286px;
+	height:35px;
+	
+}
+
+#container{
+	margin-top:80px;
+	background-color: white;
+	padding-top:0px;
+}
+
+.row{
+	padding:10px;
+	margin-bottom: 10px;
+}
+
+.strike{
+	text-decoration: line-through;
+	color:red;
+}
+
+.text{
+	text-align: center;
+	margin:15px;
+
+	height:20px;
+	
+	
+}
+
+.del{
+	font-weight: 600;
+	color:white;
+	background-color: crimson;
+	border:1px solid grey;
+}
+
+.active{
+	font-size:130%;
+	background-color: snow;
+}

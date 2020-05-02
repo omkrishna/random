@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button id="btn"> Click Me </button>
+
+	<script type="text/javascript">
+		var ctr = false;
+		document.getElementById("btn").addEventListener("click",function(){
+			if(ctr){
+				document.querySelector("body").style.background = "white";
+			}else{
+				document.querySelector("body").style.background = "blue";
+
+			}
+			ctr = !ctr;
+
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color Game</title>
+	<link rel="stylesheet" type="text/css" href="colorgame.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body onload="newGame()">
+
+	<div class="header">
+		<div class="container">
+		<h2> The Great</h2>
+		<h1> <span id="color-code"> </span></h1>
+		<h2> Guessing Game </h2>
+		</div>
+	</div>
+	<div class="navbar">
+		<div class="container">
+		<button class="new-game" onclick="newGame()"> New Game </button>
+		<span id="tries"> </span>
+		<span class="difficulty">  Hard </span>
+		</div>
+	</div>
+	<div class="content">
+		<div class="container">
+
+			<div class="tile" id="1" > </div>
+			<div class="tile" id="2"> </div>
+			<div class="tile" id="3" > </div>
+			<div class="tile" id="4" > </div>
+			<div class="tile" id="5"> </div>
+			<div class="tile" id="6"> </div>
+		</div>
+</div>
+
+
+<script>
+	var t1 = document.getElementById("1");
+	var t2 = document.getElementById("2");
+	var t3 = document.getElementById("3");
+	var t4 = document.getElementById("4");
+	var t5 = document.getElementById("5");
+	var t6 = document.getElementById("6");
+	var x;
+	var ctr=0;
+	var correct="";
+	function getRandomColor() {
+				  
+	  var num = Math.round(0xffffff * Math.random());
+	  var r = num >> 16;
+	  var g = num >> 8 & 255;
+	  var b = num & 255;
+	  return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+
+			}
+
+function newGame(){
+	ctr = 0;
+	t1.style.background = getRandomColor();
+	t2.style.background = getRandomColor();
+	t3.style.background = getRandomColor();
+	t4.style.background = getRandomColor();
+	t5.style.background = getRandomColor();
+	t6.style.background = getRandomColor();
+	x = Math.floor(Math.random()*6) +1;
+	for(var i=1; i < 7; i++){
+		if (x==1){
+			correct = t1;
+		}
+		else if (x==2){
+			correct = t2;
+		}
+		else if (x==3){
+			correct = t3;
+		}
+		else if (x==4){
+			correct = t4;
+		}
+		else if (x==5){
+			correct = t5;
+		}
+		else if (x==6){
+			correct = t6;
+		}
+
+	}
+	console.log(correct);
+	document.getElementById("color-code").innerHTML = correct.style.background;
+
+}
+
+t1.addEventListener("click",function(){
+	if (t1.style.background==correct.style.background){
+		t2.style.background=correct.style.background;
+		t3.style.background=correct.style.background;
+		t4.style.background=correct.style.background;
+		t5.style.background=correct.style.background;
+		t6.style.background=correct.style.background;
+		document.querySelector(".header").style.background = correct.style.background;
+		document.getElementById("tries").innerHTML = "Tries = "+ctr;
+	}else{
+		t1.style.background="black";
+		ctr++;
+	}
+})
+
+t2.addEventListener("click",function(){
+	if (t2.style.background==correct.style.background){
+		t1.style.background=correct.style.background;
+		t3.style.background=correct.style.background;
+		t4.style.background=correct.style.background;
+		t5.style.background=correct.style.background;
+		t6.style.background=correct.style.background;
+		document.querySelector(".header").style.background = correct.style.background;
+		document.getElementById("tries").innerHTML = "Tries = "+ctr;
+	}else{
+		t2.style.background="black";
+		ctr++;
+	}
+})
+
+
+
+
+t3.addEventListener("click",function(){
+	if (t3.style.background==correct.style.background){
+		t1.style.background=correct.style.background;
+		t2.style.background=correct.style.background;
+		t4.style.background=correct.style.background;
+		t5.style.background=correct.style.background;
+		t6.style.background=correct.style.background;
+		document.querySelector(".header").style.background = correct.style.background;
+		document.getElementById("tries").innerHTML = "Tries = "+ctr;
+	}else{
+		t3.style.background="black";
+		ctr++;
+	}
+})
+
+t4.addEventListener("click",function(){
+	if (t4.style.background==correct.style.background){
+		t1.style.background=correct.style.background;
+		t2.style.background=correct.style.background;
+		t3.style.background=correct.style.background;
+		t5.style.background=correct.style.background;
+		t6.style.background=correct.style.background;
+		document.querySelector(".header").style.background = correct.style.background;
+		document.getElementById("tries").innerHTML = "Tries = "+ctr;
+	}else{
+		t4.style.background="black";
+		ctr++;
+	}
+})
+
+t5.addEventListener("click",function(){
+	if (t5.style.background==correct.style.background){
+		t1.style.background=correct.style.background;
+		t2.style.background=correct.style.background;
+		t4.style.background=correct.style.background;
+		t3.style.background=correct.style.background;
+		t6.style.background=correct.style.background;
+		document.querySelector(".header").style.background = correct.style.background;
+		document.getElementById("tries").innerHTML = "Tries = "+ctr;
+	}else{
+		t5.style.background="black";
+		ctr++;
+	}
+})
+
+t6.addEventListener("click",function(){
+	if (t6.style.background==correct.style.background){
+		t1.style.background=correct.style.background;
+		t2.style.background=correct.style.background;
+		t4.style.background=correct.style.background;
+		t5.style.background=correct.style.background;
+		t3.style.background=correct.style.background;
+		document.querySelector(".header").style.background = correct.style.background;
+		document.getElementById("tries").innerHTML = "Tries = "+ctr;
+	}else{
+		t6.style.background="black";
+		ctr++;
+	}
+})
+
+
+
+</script>
+
+</body>
+</html>
